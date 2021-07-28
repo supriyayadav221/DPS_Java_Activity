@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class ExceptionRunRate {
+public class Exception1 {
 
     public static void main(String[] args) {
 
@@ -20,9 +20,12 @@ public class ExceptionRunRate {
             overFaced = Integer.parseInt(reader.readLine());
             double runRate = (double) runScored / (double) overFaced ;
             System.out.println("Current Run Rate :" + String.format("%.2f", runRate));
-        } catch (Exception exception) {
-            System.out.println(exception.getClass());
         }
+       
+        catch (Exception e) {
+            System.out.println(e.getClass());
+        }
+       
 
     }
 }
