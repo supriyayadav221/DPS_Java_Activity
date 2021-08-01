@@ -9,14 +9,14 @@ public class CopyFile2 {
 		      FileInputStream sourceFile = new FileInputStream("input.txt");
 		      FileOutputStream destFile = new FileOutputStream("newFile.txt");
 
-		      // reads all data from input.txt
+		   
 		      sourceFile.read(array);
 
-		      // writes all data to newFile
+		   
 		      destFile.write(array);
 		      System.out.println("The input.txt file is copied to newFile.");
 
-		      // closes the stream
+	
 		      sourceFile.close();
 		      destFile.close();
 		    }
