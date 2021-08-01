@@ -19,10 +19,6 @@ public class SortScore extends Thread {
 	}
 
 
-	public void setMatchType(String matchType) {
-		this.matchType = matchType;
-	}
-
 
 	public int[] getScores() {
 		String arr[]=scoreString.split(",");
