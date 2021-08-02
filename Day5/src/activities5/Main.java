@@ -3,6 +3,14 @@ package activities5;
 import java.util.Scanner;
 
 public class Main {
+    static void printArray(SortScore sortScore) {
+        System.out.println("Match: "+ sortScore.getMatchType());
+        int a[] = sortScore.getScores();
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+
+    }
 	public static void main(String[] args)
 	{
 	
@@ -53,8 +61,7 @@ public class Main {
 			
 			 s1.start();
 			  
-		        // starts second thread after when
-		        // first thread t1 has died.
+		       
 		        try
 		        {
 		            
@@ -67,10 +74,10 @@ public class Main {
 		                                "been caught" + ex);
 		        }
 		  
-		        // t2 starts
+		    
 		        s2.start();
 		  
-		        // starts t3 after when thread t2 has died.
+		       
 		        try
 		        {
 		           
@@ -95,28 +102,32 @@ public class Main {
 		            System.out.println("Exception has been" +
 		                                    " caught" + ex);
 		        }
+		        
 		       
 		       
-		        int a1[] =s1.getScores();
-		        int a2[]=s2.getScores();
-		        int a3[]=s3.getScores();
-		        
-		        System.out.println("Match: "+s1.getMatchType()); 
-		        for(int d: a1)
-		        {
-		        	System.out.println(d);
-		        }
-		        System.out.println("Match: "+s2.getMatchType()); 
-		        
-		        for(int d: a2)
-		        {
-		        	System.out.println(d);
-		        }
-		        System.out.println("Match: "+s3.getMatchType()); 
-		        for(int d: a3)
-		        {
-		        	System.out.println(d);
-		        }
+//		        int a1[] =s1.getScores();
+//		        int a2[]=s2.getScores();
+//		        int a3[]=s3.getScores();
+//		        
+//		        System.out.println("Match: "+s1.getMatchType()); 
+//		        for(int d: a1)
+//		        {
+//		        	System.out.println(d);
+//		        }
+//		        System.out.println("Match: "+s2.getMatchType()); 
+//		        
+//		        for(int d: a2)
+//		        {
+//		        	System.out.println(d);
+//		        }
+//		        System.out.println("Match: "+s3.getMatchType()); 
+//		        for(int d: a3)
+//		        {
+//		        	System.out.println(d);
+//		        }
+		        printArray(s1);
+		        printArray(s2);
+		        printArray(s3);
 		        
 		    }
 			
