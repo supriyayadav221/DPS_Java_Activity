@@ -16,9 +16,23 @@ public class TeamMain {
 			
 			 al.add(new Team(sc.next(),sc.nextInt()));
 		}
-	//	Collections.sort(al, new TeamComparator());
 		
+	//	Collections.sort(al, new TeamComparator());
+		//using anonymous 
+//		  Collections.sort(al, new Comparator<Team>() {
+//		        @Override
+//		        public int compare(Team o1, Team o2) {
+//		            return (int)o1.getMatches() - (int)o2.getMatches();
+//		        }
+//		    });
+//		    
+
+		
+		//using lambda
 		al.sort((Team o1, Team o2) -> (int)o1.getMatches() -(int)o2.getMatches());
+		
+		
+
 		
 		System.out.println("Team list after sort by number of matches");
 		for(Team t:al)
