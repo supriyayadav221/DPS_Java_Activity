@@ -1,10 +1,16 @@
 package com.ltts.demoProduction.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +21,16 @@ import com.ltts.demoProduction.configure.MyConfigure;
 
 public class ProductionDao {
 	
-	public boolean insertProduction(Production p) throws SQLException
+	public boolean insertProduction(Production p) throws SQLException, ParseException
 	{
 		Connection connection=MyConfigure.getConnection();
 		Statement s=connection.createStatement();
 		try {
-		s.execute("insert into productions values("+p.getProductionid() + ",' "+ p.getProductionname()+" ' ,' "+p.getAdress()+"','"+p.getOwnername() + " ') ");
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//	LocalDate l = LocalDate.parse( p.getRd(), formatter ) ;
+			
+			Date d= Date.valueOf(p.getRd());
+		s.execute("insert into productions values("+p.getProductionid() + ",' "+ p.getProductionname()+" ' ,' "+p.getAdress()+"','"+p.getOwnername()+"','"+d+" ') ");
 		
 		
 			return false;
@@ -43,7 +53,7 @@ public class ProductionDao {
 ResultSet rs=	ps.executeQuery();
 while(rs.next())
 {
-	li.add(new Production(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+	li.add(new Production(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate()));
 	
 	}
 

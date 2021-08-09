@@ -1,39 +1,23 @@
-package com.ltts.demoProduction.Model;
+package com.ltts.Day9.model;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-public class Production {
+public class Prod {
 	private int productionid;
 	private String productionname;
 	private String adress;
 	private String ownername;
-	private LocalDate rd; 
-
-
 	
 	
 	
-
-	public LocalDate getRd() {
-		return rd;
-	}
-	public void setRd(LocalDate rd) {
-		this.rd = rd;
-	}
-	public Production() {
+	
+	public Prod() {
 		super();
 	}
-	public Production(int productionid, String productionname, String adress, String ownername,LocalDate rd) {
+	public Prod(int productionid, String productionname, String adress, String ownername) {
 		super();
 		this.productionid = productionid;
 		this.productionname = productionname;
 		this.adress = adress;
 		this.ownername = ownername;
-		this.rd=rd;
-		
-		
 	}
 	public int getProductionid() {
 		return productionid;
@@ -59,17 +43,11 @@ public class Production {
 	public void setOwnername(String ownername) {
 		this.ownername = ownername;
 	}
-	
-
-	
-
-
 	@Override
 	public String toString() {
 		return "productionid=" + productionid + ", productionname=" + productionname + ", adress=" + adress
-				+ ", ownername=" + ownername ;
+				+ ", ownername=" + ownername + "]";
 	}
-	
 	
 	
 

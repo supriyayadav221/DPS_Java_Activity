@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +15,7 @@ import com.ltts.demoProduction.dao.ProductionDao;
 
 public class Main {
 
-	public static void main(String[] args) throws SQLException, NumberFormatException, IOException{
+	public static void main(String[] args) throws SQLException, NumberFormatException, IOException, ParseException{
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		ProductionDao pd=new ProductionDao();
@@ -39,7 +42,17 @@ public class Main {
 				
 				System.out.println("Enter ownername");
 				String ownername=br.readLine();
-				Production pp=new Production(id,productionname,adress,ownername);
+				
+			
+				System.out.println("Enter release date:");
+				String releaseDate=br.readLine();
+
+			    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+			  //  DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+			 LocalDate validDate= LocalDate.parse(releaseDate, formatter);
+				
+				
+				Production pp=new Production(id,productionname,adress,ownername,validDate);
 				pd.insertProduction(pp); // 1 crud :insertion
 				break;
 			case 2:
