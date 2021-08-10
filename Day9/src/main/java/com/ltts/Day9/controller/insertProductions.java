@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,10 +47,11 @@ public class insertProductions extends HttpServlet {
 		String productionname=request.getParameter("productionname");
 		String adress=request.getParameter("adress");
 		String ownername=request.getParameter("ownername");
+		String rd=request.getParameter("rd");
 		
-		System.out.println("id: "+productionid +" name: "+productionname +" Adress : "+adress +" Owner Name: "+ownername);
+		System.out.println("id: "+productionid +" name: "+productionname +" Adress : "+adress +" Owner Name: "+ownername+" Date"+rd);
 	
-		Prod p=new Prod(productionid,productionname,adress,ownername);
+		Prod p=new Prod(productionid,productionname,adress,ownername,rd);
 		ProdDao pd=new ProdDao();
 		
 		boolean b=false;
@@ -59,13 +61,22 @@ public class insertProductions extends HttpServlet {
 		} catch (Exception e) {
 			b=true;
 		}finally {
+			
+			RequestDispatcher requestDispatcher=null;
+			
 			if(b==true)
 			{
+				
 				System.out.println("Error due to Exception");	
+				requestDispatcher=request.getRequestDispatcher("error.html");
+				requestDispatcher.forward(request, response);
+				
 			}
 			else
 			{
 				System.out.println("Successfully Inserted");
+				requestDispatcher=request.getRequestDispatcher("success.html");
+				requestDispatcher.forward(request, response);
 			}
 		}
 		

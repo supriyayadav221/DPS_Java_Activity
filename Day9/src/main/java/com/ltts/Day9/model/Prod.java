@@ -5,6 +5,7 @@ public class Prod {
 	private String productionname;
 	private String adress;
 	private String ownername;
+	private String rd;
 	
 	
 	
@@ -12,12 +13,21 @@ public class Prod {
 	public Prod() {
 		super();
 	}
-	public Prod(int productionid, String productionname, String adress, String ownername) {
+	public Prod(int productionid, String productionname, String adress, String ownername,String rd) {
 		super();
 		this.productionid = productionid;
 		this.productionname = productionname;
 		this.adress = adress;
 		this.ownername = ownername;
+		this.rd=rd;
+	}
+	
+	
+	public String getRd() {
+		return rd;
+	}
+	public void setRd(String rd) {
+		this.rd = rd;
 	}
 	public int getProductionid() {
 		return productionid;
