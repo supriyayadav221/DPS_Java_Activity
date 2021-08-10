@@ -70,5 +70,23 @@ while(rs.next())
 		return false;
 	}
 	
+	
+	public List<Prod> getProdByAdress() throws SQLException, ClassNotFoundException
+	{
+		List<Prod> li=new ArrayList<Prod>();
+		Connection connection = MyConfigure.getConnection();
+		PreparedStatement ps=connection.prepareStatement("Select * from prod WHERE adress= ?");
+		ps.setString(1, "Banglore");
+ResultSet rs=	ps.executeQuery();
+while(rs.next())
+{
+	li.add(new Prod(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
+	
+	}
+
+		return li;
+		
+	}
+	
 
 }
