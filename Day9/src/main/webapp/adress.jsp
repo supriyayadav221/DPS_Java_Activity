@@ -14,11 +14,19 @@
 
 <%
 ProdDao pd=new ProdDao();
-List<Prod> li=pd.getProdByAdress();
+List<Prod> li=pd.getAllProd();
+
 
 %>
+<form name="adressFunction" method="get" action="#">
+Enter City name: <input type="text" name="a">
+ <input type="submit" name="submit" value="Adress"/>
+</form>
 
-<a href="index.html">Index</a>
+
+
+
+<a href="index.html">Dashboard</a>
 <table>
 <tr>
 <th>Production id</th>
@@ -27,7 +35,10 @@ List<Prod> li=pd.getProdByAdress();
 <th>Production OwnerName</th>
 <th>Production Release Date</th>
 </tr>
-<%for(Prod p:li){%>
+<%  String ss=request.getParameter("a");%>
+<%for(Prod p:li){
+if(p.getAdress().equals(ss)){
+%>
 	<tr>
 	<td><%=p.getProductionid() %></td>
 	<td><%=p.getProductionname() %></td>
@@ -38,7 +49,7 @@ List<Prod> li=pd.getProdByAdress();
 	
 	
 	</tr>
-<%}%>
+<%}}%>
 </table>
 
 

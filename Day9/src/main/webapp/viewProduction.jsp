@@ -28,6 +28,7 @@ List<Prod> li=pd.getAllProd();
 <th>Production Address</th>
 <th>Production OwnerName</th>
 <th>Production Release Date</th>
+<th>Edit</th>
 </tr>
 <%for(Prod p:li){%>
 	<tr>
@@ -36,6 +37,7 @@ List<Prod> li=pd.getAllProd();
 	<td><%=p.getAdress() %></td>
 	<td><%=p.getOwnername() %></td>
 	<td><%=p.getRd() %></td>
+	<td><a href="edit.jsp?id=<%=p.getProductionid() %>">Edit</a></td>
 	
 	
 	
