@@ -47,6 +47,7 @@ public class checkMemberController extends HttpServlet {
 		HttpSession sess =request.getSession();
 		
 		
+		
 		boolean b=false;
 	try {
 		 b=md.checkMemberByEmail(user, pass);
@@ -66,7 +67,7 @@ public class checkMemberController extends HttpServlet {
 			{
 				rd=request.getRequestDispatcher("welcome.jsp");
 				sess.setAttribute("email",user);
-				sess.setAttribute("currentUser", user);
+				
 				rd.forward(request, response);
 			}
 		}

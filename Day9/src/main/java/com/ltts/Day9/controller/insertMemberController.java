@@ -44,9 +44,15 @@ public class insertMemberController extends HttpServlet {
 	String email=request.getParameter("email");
 	String mobile=request.getParameter("mobile");
 	String location=request.getParameter("country");
+	if(name==null || email ==null )
+	{
+		
+	}
 	Member m=new Member(name,email,mobile,location);
 	MemberDao md=new MemberDao();
 	boolean b=false;
+	
+	
 	
 	try {
 		md.insertMember(m);
@@ -66,9 +72,14 @@ public class insertMemberController extends HttpServlet {
 		}
 		else
 		{
-			System.out.println("Successfully Inserted");
-			requestDispatcher=request.getRequestDispatcher("newSuccess.html");
-			requestDispatcher.forward(request, response);
+			
+				
+				System.out.println("Successfully Inserted");
+				requestDispatcher=request.getRequestDispatcher("newSuccess.html");
+				requestDispatcher.forward(request, response);	
+	
+			}
+			
 		}
 	}
 	
@@ -77,4 +88,4 @@ public class insertMemberController extends HttpServlet {
 		
 	}
 
-}
+
