@@ -65,9 +65,9 @@ public class checkMemberController extends HttpServlet {
 			}
 			else
 			{
-				rd=request.getRequestDispatcher("welcome.jsp");
-				sess.setAttribute("email",user);
 				
+				sess.setAttribute("email",user);
+				rd=request.getRequestDispatcher("welcome.jsp");
 				rd.forward(request, response);
 			}
 		}

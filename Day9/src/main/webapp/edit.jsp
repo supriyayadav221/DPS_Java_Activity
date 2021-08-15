@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="pink">
+<a href="index.jsp">Dashboard</a><br><br>
 <%
 ProdDao pd=new ProdDao();
 int id=Integer.parseInt(request.getParameter("id"));

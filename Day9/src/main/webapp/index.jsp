@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+        <%@ page import="com.ltts.Day9.model.*,com.ltts.Day9.Dao.*,java.util.*"  %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,12 @@
 </head>
 <body bgcolor="pink">
 
+<%	 
+	if (session.getAttribute("email") == null) {
+		response.sendRedirect("hello.html");
+		return;
+	}
+	%>
 
 <a href="logout.jsp">Logout</a>
 <br><br>

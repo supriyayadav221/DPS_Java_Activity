@@ -26,7 +26,7 @@ Enter City name: <input type="text" name="a">
 
 
 
-<a href="index.html">Dashboard</a>
+<a href="index.jsp">Dashboard</a>
 <table>
 <tr>
 <th>Production id</th>

@@ -20,7 +20,7 @@ List<Prod> li=pd.getAllProd();
 
 
 
-<a href="index.html">Index</a>
+<a href="index.jsp">Dashboard</a><br><br>
 <table>
 <tr>
 <th>Production id</th>

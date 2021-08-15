@@ -25,7 +25,7 @@ Enter movie language : <input type="text" name="a">
 
 
 
-<a href="index.html">Index</a>
+<a href="index.jsp">Dashboard</a><br><br>
 <table>
 <tr>
 <th>Id</th>
